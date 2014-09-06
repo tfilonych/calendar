@@ -1,25 +1,38 @@
 body {
-	background: #cbefbb;
+	background-image: -ms-linear-gradient(right, #0C6613 0%, #BEF2A7 50%, #0E7316 100%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(right, #0C6613 0%, #BEF2A7 50%, #0E7316 100%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(right, #0C6613 0%, #BEF2A7 50%, #0E7316 100%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #0C6613), color-stop(0.5, #BEF2A7), color-stop(1, #0E7316));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(right, #0C6613 0%, #BEF2A7 50%, #0E7316 100%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: linear-gradient(to left, #0C6613 0%, #BEF2A7 50%, #0E7316 100%);
 }
 #calendar_wrapper {
-	width: 600px;
+	width: 595px;
 	height: 500px;
 	margin: auto;
+	margin-top: 20px;
 }
 
 #m_y {
-	background: -ms-linear-gradient(left, #009900 0%, #99FF66 40%, #99FF66 60%, #009900 100%);
-	background: -moz-linear-gradient(left, #009900 0%, #99FF66 40%, #99FF66 60%, #009900 100%);
-	background: -o-linear-gradient(left, #009900 0%, #99FF66 40%, #99FF66 60%, #009900 100%);
-	background: -webkit-gradient(linear, left top, right top, color-stop(0, #009900), color-stop(0.4, #99FF66), color-stop(0.6, #99FF66), color-stop(1, #009900));
-	background: -webkit-linear-gradient(left, #009900 0%, #99FF66 40%, #99FF66 60%, #009900 100%);
-	background: linear-gradient(to right, #009900 0%, #99FF66 40%, #99FF66 60%, #009900 100%);
-	width: 600px;
+	background: rgba(12,102,19,0.5);
+	width: 595px;
 	border-radius: 5px;
-	height: 60px;
+	height: 65px;
 	font-size: 20px;
 	line-height: 60px;
 	text-align: center;
+	color: white;
+	font-weight: bold;
 }
 
 img {
@@ -39,32 +52,34 @@ img {
 	border: 1px solid;
 	display: inline-block;
 	vertical-align: middle;
+	border-radius: 5px;
 }
 
 #day, #calendar {
-	background: #89ef5b;
-	height: 60px;
+	background: rgba(12,102,19,0.2);
+	height: 50px;
 	border-radius: 5px;
 	float: left;
-	width: 600px;
+	width: 595px;
 	margin-top: 5px;
 }
 
 .week_day, .date {
+	background: rgba(12,102,19,0.2);
 	float: left;
-	margin: 10px;
-	width: 51px;
+	margin: 2px;
+	width: 67px;
 	border: 1px solid #34ac0a;
 	padding: 6px;
 	border-radius: 5px;
 	text-align: center;
-	font-size: 20px;
+	font-size: 24px;
 	color: white;
 	font-weight: bold;
-	line-height: 20px;
-	height: 20px;
+	line-height: 30px;
+	height: 30px;
 }
 
 #calendar {
-	height: 320px;
+	min-height: 290px;
 }
