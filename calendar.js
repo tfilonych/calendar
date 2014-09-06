@@ -11,6 +11,50 @@ function start() {
 	var now_day = today.getDay();
 	var now_year = today.getFullYear();
 	fillCalendar(now_month, now_year);
+	var back_month = document.getElementById("back_month");
+	var forward_month = document.getElementById("forward_month");
+	var back_year = document.getElementById("back_year");
+	var forward_year = document.getElementById("forward_year");
+	back_month.onclick = previous_month;
+	forward_month.onclick = next_month;
+	back_year.onclick = previous_year;
+	forward_year.onclick = next_year;
+}
+
+function previous_year() {
+	var current_month = document.getElementById("month").innerHTML;
+	var month_name = months.indexOf(current_month);
+	var current_year = parseInt(document.getElementById("year").innerHTML);
+	fillCalendar(month_name, current_year - 1);
+}
+
+function next_year() {
+	var current_month = document.getElementById("month").innerHTML;
+	var month_name = months.indexOf(current_month);
+	var current_year = parseInt(document.getElementById("year").innerHTML);
+	fillCalendar(month_name, current_year + 1);
+}
+
+function previous_month() {
+	var current_month = document.getElementById("month").innerHTML;
+	var month_name = months.indexOf(current_month);
+	var current_year = parseInt(document.getElementById("year").innerHTML);
+	if (month_name == 0) {
+		fillCalendar(11, current_year - 1);
+	} else {
+		fillCalendar(month_name - 1, current_year);
+	}
+}
+
+function next_month() {
+	var current_month = document.getElementById("month").innerHTML;
+	var month_name = months.indexOf(current_month);
+	var current_year = parseInt(document.getElementById("year").innerHTML);
+	if (month_name == 11) {
+		fillCalendar(0, current_year + 1);
+	} else {
+		fillCalendar(month_name + 1, current_year);
+	}
 }
 
 function clearDateCells() {
@@ -64,4 +108,4 @@ function createDayCells() {
 	}
 }
 
-window.onload = start; 
+window.onload = start;
