@@ -1,15 +1,17 @@
 var date_cells = [];
 var day_names = ["пн", "вт", "ср", "чт", "пт", "сб", "нд"];
 var months = ["Cічень", "Лютий", "Березень", "Квітень", "Травень", "Червень", "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"];
-var now_month, now_year;
+var now_month, now_year, now_day, now_date;
 
 function start() {
 	createDatesCells();
 	createDayCells();
 	var today = new Date();
-	var now_month = today.getMonth();
-	var now_day = today.getDay();
-	var now_year = today.getFullYear();
+	now_date = today.getDate();
+	now_month = today.getMonth();
+	now_day = today.getDay();
+	now_year = today.getFullYear();
+	createFullDateCell();
 	fillCalendar(now_month, now_year);
 	var back_month = document.getElementById("back_month");
 	var forward_month = document.getElementById("forward_month");
@@ -59,7 +61,9 @@ function next_month() {
 
 function clearDateCells() {
 	for ( i = 0; i < date_cells.length; i++) {
-		date_cells[i].innerHTML = "";
+		var cell = date_cells[i];
+		cell.innerHTML = "";
+		cell.setAttribute("class", "date");
 	}
 }
 
@@ -83,9 +87,27 @@ function fillCalendar(month, year) {
 	}
 	var numberOfDays = countDayInMonth(month, year);
 	for ( i = 1; i <= numberOfDays; i++) {
-		date_cells[firstWeekDay + i - 1].innerHTML = i;
+		var cell = date_cells[firstWeekDay + i - 1];
+		cell.innerHTML = i;
+		if (isItDayToday(month, year, i)) {
+			cell.setAttribute("class", "today_day");
+		}
 	}
+}
 
+function isItDayToday(month, year, day) {
+	return (month == now_month) && (year == now_year) && (day == now_date);
+}
+
+function createFullDateCell() {
+	document.getElementById("number").innerHTML = now_date;
+	document.getElementById("todayMonth").innerHTML = months[now_month];
+	document.getElementById("todayYear").innerHTML = now_year;
+	var day = now_day - 1;
+	if (day == -1) {
+		day = 6;
+	}
+	document.getElementById("weekDay").innerHTML = day_names[day] + ", ";
 }
 
 function createDatesCells() {

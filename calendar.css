@@ -1,26 +1,39 @@
 body {
 	background-image: -ms-linear-gradient(right, #0C6613 0%, #BEF2A7 50%, #0E7316 100%);
-
-/* Mozilla Firefox */ 
-background-image: -moz-linear-gradient(right, #0C6613 0%, #BEF2A7 50%, #0E7316 100%);
-
-/* Opera */ 
-background-image: -o-linear-gradient(right, #0C6613 0%, #BEF2A7 50%, #0E7316 100%);
-
-/* Webkit (Safari/Chrome 10) */ 
-background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #0C6613), color-stop(0.5, #BEF2A7), color-stop(1, #0E7316));
-
-/* Webkit (Chrome 11+) */ 
-background-image: -webkit-linear-gradient(right, #0C6613 0%, #BEF2A7 50%, #0E7316 100%);
-
-/* W3C Markup, IE10 Release Preview */ 
-background-image: linear-gradient(to left, #0C6613 0%, #BEF2A7 50%, #0E7316 100%);
+	background-image: -moz-linear-gradient(right, #0C6613 0%, #BEF2A7 50%, #0E7316 100%);
+	background-image: -o-linear-gradient(right, #0C6613 0%, #BEF2A7 50%, #0E7316 100%);
+	background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #0C6613), color-stop(0.5, #BEF2A7), color-stop(1, #0E7316));
+	background-image: -webkit-linear-gradient(right, #0C6613 0%, #BEF2A7 50%, #0E7316 100%);
+	background-image: linear-gradient(to left, #0C6613 0%, #BEF2A7 50%, #0E7316 100%);
 }
 #calendar_wrapper {
 	width: 595px;
 	height: 500px;
 	margin: auto;
+}
+
+#allDate {
+	background: rgba(12,102,19,0.5);
+	width: 595px;
+	border-radius: 5px;
+	height: 65px;
+	color: white;
+	text-align: center;
+	line-height: 65px;
 	margin-top: 20px;
+}
+#icon, #weekDay, #number, #todayMonth, #todayYear {
+	display: inline-block;
+	vertical-align: middle;
+	font-weight: bold;
+	font-size: 32px;
+	height: 65;
+	margin-right: 15px;
+}
+
+#icon {
+	width: 40px;
+	height: 40px;
 }
 
 #m_y {
@@ -33,6 +46,7 @@ background-image: linear-gradient(to left, #0C6613 0%, #BEF2A7 50%, #0E7316 100%
 	text-align: center;
 	color: white;
 	font-weight: bold;
+	margin-top: 5px;
 }
 
 img {
@@ -64,7 +78,7 @@ img {
 	margin-top: 5px;
 }
 
-.week_day, .date {
+.week_day, .date, .today_day {
 	background: rgba(12,102,19,0.2);
 	float: left;
 	margin: 2px;
@@ -82,4 +96,8 @@ img {
 
 #calendar {
 	min-height: 290px;
+}
+
+.today_day {
+	color: red;
 }
