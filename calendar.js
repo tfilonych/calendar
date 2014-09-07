@@ -21,6 +21,12 @@ function start() {
 	forward_month.onclick = next_month;
 	back_year.onclick = previous_year;
 	forward_year.onclick = next_year;
+	var current = document.getElementById("current");
+	current.onclick = returnToCurrentMonth;
+}
+
+function returnToCurrentMonth(){
+	fillCalendar(now_month, now_year);
 }
 
 function previous_year() {

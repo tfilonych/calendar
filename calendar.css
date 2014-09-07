@@ -22,7 +22,7 @@ body {
 	line-height: 65px;
 	margin-top: 20px;
 }
-#icon, #weekDay, #number, #todayMonth, #todayYear {
+#current, #weekDay, #number, #todayMonth, #todayYear {
 	display: inline-block;
 	vertical-align: middle;
 	font-weight: bold;
@@ -31,9 +31,10 @@ body {
 	margin-right: 15px;
 }
 
-#icon {
+#current {
 	width: 40px;
 	height: 40px;
+	cursor: pointer;
 }
 
 #m_y {
@@ -56,6 +57,7 @@ img {
 
 #forward_month {
 	margin-right: 100px;
+	cursor: pointer;
 }
 
 #month, #year {
@@ -96,6 +98,10 @@ img {
 
 #calendar {
 	min-height: 290px;
+}
+
+#back_month, #back_year, #forward_year{
+	cursor: pointer;
 }
 
 .today_day {
